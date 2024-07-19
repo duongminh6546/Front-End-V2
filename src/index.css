@@ -1,0 +1,186 @@
+/* src/index.css */
+
+/* Các style toàn cục */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87); /* Màu chữ */
+  background-color: #242424; /* Nền của trang */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  min-width: 320px;
+  min-height: 100vh;
+  text-align: center; /* Căn giữa nội dung */
+}
+
+#root {
+  max-width: 1280px;
+  width: 100%; /* #root chiếm toàn bộ chiều rộng của body */
+  padding: 2rem;
+  box-sizing: border-box; /* Không làm tăng kích thước tổng thể */
+  border-radius: 8px; /* Bo tròn góc khối nội dung */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: 0; /* Xóa khoảng cách mặc định */
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87); /* Đảm bảo chữ trên button rõ ràng */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+  background-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    color: #000; /* Đảm bảo chữ trên button rõ ràng trong chế độ sáng */
+  }
+}
+
+/* Thêm vào các class Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Style cho các thành phần Tic-tac-toe */
+.game-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  /* Căn giữa nội dung trò chơi */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-inputs {
+  margin-bottom: 20px;
+}
+
+.player-inputs label {
+  display: block;
+  margin: 10px 0;
+  font-size: 20px; /* Tăng kích thước chữ */
+}
+
+.player-inputs input {
+  padding: 12px;
+  font-size: 20px; /* Tăng kích thước chữ */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 350px; /* Mở rộng kích thước tối đa của input */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.player-inputs input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.game-status {
+  margin: 20px;
+  font-size: 28px; /* Tăng kích thước chữ */
+  font-weight: bold;
+}
+
+.square {
+  width: 80px; /* Tăng kích thước của ô */
+  height: 80px;
+  background: #fff;
+  border: 2px solid #ddd;
+  float: left;
+  font-size: 32px; /* Tăng kích thước chữ */
+  font-weight: bold;
+  line-height: 80px; /* Căn giữa chữ theo chiều dọc */
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.square:hover {
+  background: #f0f0f0;
+}
+
+/* Loại bỏ hiệu ứng click */
+.square:active {
+  background: #f0f0f0;
+  border-color: #ddd;
+}
+
+.board-row {
+  clear: both;
+  margin-bottom: -2px; /* Giảm khoảng cách giữa các hàng */
+}
+
+/* Style cho nút chơi lại */
+.restart-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.2em; /* Tăng kích thước chữ */
+  font-weight: 500;
+  background-color: #007bff;
+  color: #fff; /* Đảm bảo chữ trên button rõ ràng */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+  margin-top: 20px; /* Khoảng cách với phần tử trên */
+}
+
+.restart-button:hover {
+  background-color: #0056b3;
+}
